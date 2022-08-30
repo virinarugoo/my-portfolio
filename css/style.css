@@ -1,0 +1,646 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body *{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  overflow: hidden;
+
+
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+/* The Navigation */
+.sidebar {
+  position: fixed;
+  width: 27%;
+  height: 100%;
+  background: #30415D;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  scroll-behavior: smooth;
+
+}
+
+.sidebar h2 {
+  color: white;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: #CF6766;
+  padding: 13px;
+  font-weight: normal;
+}
+
+/* .sidebar h3 {
+  color: white;
+  font-size: 13px;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: #CF6766;
+  font-weight: normal;
+
+} */
+
+.sidebar ul li {
+  margin: 25px 0;
+  text-align: center;
+
+}
+
+.sidebar ul li a{
+  color: white;
+  text-transform: uppercase;
+  font-size: 13px;
+  padding: 0 30px;
+}
+.sidebar ul li a:hover{
+  color: #CF6766;
+  margin-left: 20px;
+  transition: 0.4s;
+  border-bottom: 1px solid  #CF6766;
+}
+
+.sidebar img {
+  width: 150px;
+  clip-path: circle();
+  margin-left: 30%;
+  padding-bottom: 36px;
+
+}
+
+/* Introduction  */
+.intro{
+  height: 100vh;
+  width: 73%;
+  margin-left: 410px;
+  padding: 179px 80px;
+  background-image: url(../image/back1.png);
+  background-size: cover;
+  background-position: center;
+  color: white;
+
+}
+
+.intro h2, h1{
+  font-family: 'Yeseva One', cursive;
+  font-size: 70px;
+}
+
+.intro h4 {
+  width: 40%;
+  padding-top: 20px;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.intro button {
+  width: 25%;
+  margin-top: 30px;
+  padding: 10px;
+  color: #CF6766;
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  cursor: pointer;
+
+}
+
+button .link{
+color: #CF6766;
+text-decoration: none;
+}
+
+
+.intro button:hover {
+  margin-top: 30px;
+  padding: 10px;
+  background-color: #CF6766;
+  color: white;
+
+}
+
+.intro button a:hover {
+  margin-top: 30px;
+  /* padding: 10px; */
+  /* background-color: #CF6766; */
+  color: white;
+
+}
+
+.intro .fa-download {
+  padding-right: 10px;
+}
+
+/*  About Me   +  Work Section */
+.aboutme, .work, .skill, .contact, .social, .services{
+  height: 100vh;
+  width: 73%;
+  margin-left: 400px;
+  padding: 70px 80px;
+  overflow: hidden;
+
+}
+
+.aboutme span, .work span, .skill span, .contact span, .services span{
+  font-family: 'Montserrat', sans-serif;
+  color: #CF6766;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1.5rem;
+
+}
+
+.aboutme h3, .work h3, .contact h3, .skill h3, .services h3{
+  font-family: 'Yeseva One', cursive;
+  padding-top: 20px;
+  text-transform: uppercase;
+  color: #30415D;
+}
+
+.aboutme p, .work p, .skill p, .contact p, .services p {
+  font-family: 'Montserrat', sans-serif;
+  padding-top: 20px;
+  color: #636e72;
+}
+
+.aboutme p, .aboutpic {
+  float: left;
+  width: 47%;
+  display: block;
+  transform: transform 2s;
+}
+
+.aboutme {
+  height: 470px;
+}
+
+
+.aboutme p {
+  padding-left: 41px;
+  padding-top: 32px;
+}
+
+.aboutpic {
+  padding-top: 25px;
+}
+
+
+/* Services */
+.services {
+  height: auto;
+}
+
+.boxes {
+  width: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 300px;
+  grid-gap: 0 35px;
+  margin-top: 40px;
+}
+
+.box{
+  border: 2px solid #b2bec3;
+  position: relative;
+  cursor: pointer;
+}
+
+.box .inner_box{
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top:50%;
+  transform: translateY(-50%);
+  color: lightgrey;
+  transition: .3s;
+}
+
+.inner_box span {
+  background-color: #30415D;
+  display: inline-block;
+  width: 90px;
+  height: 70px;
+  line-height: 80px;
+  font-size: 40px;
+}
+
+.inner_box h3{
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+.box p{
+  font-size: 17px;
+  color: #636e72;
+  text-align: justify;
+  word-break: break-all;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 80%;
+  text-align-last: center;
+  margin-top: 100px;
+  opacity: 0;
+}
+
+.box:hover{
+  border-color: #CF6766;
+  background: rgb(240, 240, 240);
+
+}
+
+.box:hover .inner_box{
+  margin-top: -120px;
+  color: #CF6766;
+}
+
+.box:hover p{
+  opacity: 1;
+  margin-top: 0;
+  transition: .4s;
+  transition-delay: .3s;
+}
+
+
+/* My Work: Class Assignments/Passion Projects/Paid Work */
+.work{
+  height: auto;
+
+}
+
+.image-gallery img{
+  width: 50%;
+  height: auto;
+  float: left;
+  padding: 20px 20px 10px 0;
+
+
+}
+
+
+
+/* Skills and Experiences  */
+.skill .line {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.skill .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skill p{
+  padding-bottom: 30px;
+}
+
+.skill .info span {
+  font-weight: 500;
+  font-size: 15px;
+  padding-bottom: 10px;
+}
+
+.skill .bars{
+  background-color: lightgrey;
+  height: 5px;
+  width: 100%;
+  position: relative;
+}
+
+.skill .bars::before{
+  content: '';
+  position: absolute;
+  height: 100%;
+  background-color: #CF6766;
+}
+
+.info h6 {
+  color: #30415D;
+}
+
+.skill .html::before{
+  width: 95%;
+}
+
+.skill .css::before{
+  width: 90%;
+}
+
+.skill .js::before{
+  width: 60%;
+}
+
+.skill .ps::before{
+  width: 85%;
+}
+
+.skill .ai::before{
+  width: 75%;
+}
+
+.skill .git::before{
+  width: 45%;
+}
+
+.skill .oop::before{
+  width: 35%;
+}
+
+.skill .oop::before{
+  width: 35%;
+}
+
+.skill .node::before{
+  width: 40%;
+}
+
+/*  Contact  */
+.contact .info-contact h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  line-height: 1.5em;
+  color: #636e72;
+  font-weight: normal;
+
+}
+
+.info-contact, .contact-form {
+  float: left;
+  width: 40%;
+  margin: 45px 0 0 0;
+  line-height: 1.5em;
+}
+
+.info-contact .email, .address, .mobile{
+  padding-bottom: 20px;
+}
+ .info-contact .fas, .fa-solid {
+  font-size: 25px;
+  padding-right: 10px;
+  color: #CF6766;
+
+}
+
+.contact-form input {
+  width: 353px;
+  height: 38px;
+  margin-bottom: 20px;
+  padding: 16px;
+  border-radius: 4px;
+  border: 1px solid #636e72;
+  font-size: 13px;
+  cursor: text;
+
+}
+
+input:focus{
+  outline: 2px solid #CF6766;
+}
+
+textarea:focus{
+  outline: 2px solid #CF6766;
+}
+
+.contact-form textarea {
+  width: 353px;
+  height: 138px;
+  margin-bottom: 20px;
+  padding: 16px;
+  border-radius: 4px;
+  border: 1px solid #636e72;
+  font-size: 13px;
+}
+
+.contact-form button{
+  width: 35%;
+  margin-top: 5px;
+  padding: 10px;
+  color: white;
+  border: 1px solid white;
+  background-color: #30415D;
+  border-radius: 10px;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.contact-form button:hover {
+  margin-top: 5px;
+  padding: 10px;
+  color: #ffffff;
+  background-color: #CF6766;
+}
+
+/*  Footer  */
+
+ .social{
+  height: 150px;
+  width: 73%;
+  margin-left: 400px;
+  padding: 70px 80px;
+  text-align: center;
+}
+
+.social .fa-facebook-square, .fa-twitter-square, .fa-instagram, .fa-behance-square {
+  padding-right: 5px;
+  font-size: 15px;
+  color: #30415D;
+
+}
+
+
+.social .fb, .tw, .ins, .be {
+  padding-right: 50px;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #30415D;
+}
+
+
+.social a:hover{
+  color: #CF6766;
+}
+
+.social span {
+  color: #636e72;
+  font-size: 12px;
+  font-weight: normal;
+  padding: 15px;
+  text-transform: uppercase;
+}
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+@media (max-width: 500px) {
+ .sidebar {
+  position: absolute;
+  width: 100%;
+ }
+
+
+.intro {
+  float: left;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  margin-left: 0;
+  margin-top: 500px;
+}
+
+.intro h1, h2 {
+  font-size: 40px;
+}
+
+.intro h4 {
+  width: 100%;
+  display: block;
+  font-size: 15px;
+  padding-top: 20px;
+}
+
+.intro button {
+width: 80%;
+color: #fff;
+}
+
+.aboutme{
+  margin: 0;
+  width: 100%;
+  height:auto;
+  text-align: center;
+}
+
+.aboutme h3{
+  padding: 10px;
+  font-size: 20px;
+}
+
+.aboutme img {
+  width: 100%;
+}
+
+.aboutme p {
+  width: 100%;
+  text-align: center;
+}
+
+.services {
+  margin: 0;
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+.boxes {
+  width: 100%;
+  height: 1000px;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: 300px;
+  grid-gap: 10px 35px;
+  margin-top: 60px;
+
+}
+
+.work {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+}
+
+.image-gallery img {
+  width: 100%;
+  height: auto;
+}
+
+.skill h3{
+  width: 100%;
+  text-align: center;
+}
+
+.skill .speciality span{
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+
+
+.skill {
+  width: 100%;
+  margin: 0;
+
+}
+
+.contact {
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+
+.info-contact{
+  margin-left: 0;
+  width: 100%;
+}
+
+.contact-form {
+  margin-left: 0;
+  width: 100%;
+}
+
+.contact span, h3{
+  text-align: center;
+}
+
+.contact-form input {
+  width: 100%;
+}
+
+.contact-form textarea {
+  width: 100%;
+}
+
+.contact-form button {
+  width: 100%;
+}
+
+.social i{
+  margin: 0;
+  width: 100%;
+}
+
+}
